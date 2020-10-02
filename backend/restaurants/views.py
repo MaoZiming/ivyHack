@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from .models import Restaurant, User, Deal
+from .models import Restaurant, User, Deal, Order
 from rest_framework import viewsets, permissions
-from .serializers import RestaurantSerializer, UserSerializer, DealSerializer
+from .serializers import RestaurantSerializer, UserSerializer, DealSerializer, OrderSerializer
 
 class RestaurantView(viewsets.ModelViewSet):
     queryset = Restaurant.objects.all()
@@ -16,4 +16,8 @@ class UserView(viewsets.ModelViewSet):
 
 class DealView(viewsets.ModelViewSet):
     queryset = Deal.objects.all()
-    serializer_class = DealSerializer 
+    serializer_class = DealSerializer
+
+class OrderView(viewsets.ModelViewSet):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
