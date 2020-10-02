@@ -10,7 +10,7 @@ class RestaurantSerializer(serializers.HyperlinkedModelSerializer):
 class DealSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Deal
-        fields = ('id', 'title', 'description','original_price','new_price', 'restaurant', 'orders', 'url')
+        fields = ('id', 'title', 'description','original_price','new_price', 'restaurant', 'orders', 'url', 'img_url')
         read_only_fields = ('orders',)
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
